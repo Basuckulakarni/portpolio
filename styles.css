@@ -1,0 +1,268 @@
+body {
+    font-family:'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    color: #232946;
+    min-height: 100vh;
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+header {
+    background: #232946;
+    color: #fff;
+    padding: 1.2rem 0 0.7rem 0;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 2px 12px rgba(35,41,70,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-flex, .nav-flex, .nav-menu, .nav-toggle {
+    display: none !important;
+}
+main {
+    margin: 2.5rem auto 2rem auto;
+    max-width: 600px;
+}
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(35,41,70,0.07);
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.2s;
+}
+.card:hover {
+    box-shadow: 0 4px 24px rgba(35,41,70,0.13);
+}
+h2 {
+    color: #232946;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+.skills-list {
+    columns: 1;
+    column-gap: 2rem;
+    padding-left: 1.2rem;
+    font-size: 1rem;
+}
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.project-card {
+    background: #e0e7ff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 1px 6px rgba(35,41,70,0.06);
+}
+.project-card h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    color: #232946;
+}
+.project-card p {
+    margin: 0;
+    font-size: 0.98rem;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.contact-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.contact-list a {
+    color: #232946;
+    text-decoration: underline;
+    margin-left: 0.2em;
+}
+.icon {
+    display: inline-block;
+    width: 1.2em;
+    text-align: center;
+    margin-right: 0.5em;
+    color: #f92545;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+.email-icon:before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: "\f0e0";
+}
+.github-icon:before {
+    font-family: 'Font Awesome 6 Brands';
+    content: "\f09b";
+}
+.phone-icon:before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: "\f095";
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+}
+form label {
+    font-weight: 500;
+}
+form input, form textarea {
+    padding: 0.6rem;
+    border: 1px solid #b8c1ec;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #f4f4f4;
+    resize: vertical;
+}
+form textarea {
+    min-height: 90px;
+}
+form button {
+    padding: 0.7rem;
+    background: #232946;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #eebbc3;
+    color: #232946;
+}
+#form-message {
+    margin-top: 1rem;
+    color: #1ca672;
+    font-weight: 500;
+}
+footer {
+    text-align: center;
+    padding: 1.2rem 0 1rem 0;
+    background: #232946;
+    color: #eebbc3;
+    font-size: 1rem;
+    margin-top: 2rem;
+    border-radius: 24px 24px 0 0;
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+.profile-pic {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eebbc3;
+    background: #fff;
+}
+.profile-pic-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eebbc3;
+    background: #fff;
+    display: block;
+    margin: 1.2rem auto 0.7rem auto;
+    box-shadow: 0 2px 8px rgba(35,41,70,0.08);
+}
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0;
+}
+.hero-title {
+    font-size: 1.7rem;
+    color: #232946;
+    margin: 0;
+    font-weight: 700;
+}
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #f92545;
+    margin: 0 0 0.2rem 0;
+    font-weight: 500;
+}
+.hero-socials {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 0.2rem;
+}
+.hero-socials a {
+    color: #232946;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+.hero-socials a:hover {
+    color: #f92545;
+}
+.nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+.logo-hero {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 2px 12px rgba(35,41,70,0.10);
+    z-index: 10;
+    border-bottom: 1px solid #e0e7ff;
+}
+#bg-graphics {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: transparent;
+}
+.colourful-headline {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #f92545, #eebbc3, #b8c1ec, #232946, #e0e7ff);
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text 3s linear infinite;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+@keyframes rainbow-text {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
