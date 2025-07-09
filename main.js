@@ -5,29 +5,48 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof emailjs !== 'undefined') {
         emailjs.init('h2uo0veNdKltVlXwP'); // Your EmailJS public key
     }
+
     document.getElementById('contact-form').onsubmit = function (e) {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        if (typeof emailjs === 'undefined') {
-            document.getElementById('form-message').textContent = '❌ EmailJS not loaded. Please check your internet connection.';
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        const statusMessage = document.getElementById('form-message');
+
+        if (!name || !email || !message) {
+            statusMessage.textContent = '⚠️ Please fill out all fields.';
             return;
         }
+
+        if (typeof emailjs === 'undefined') {
+            statusMessage.textContent = '❌ EmailJS not loaded. Please check your internet connection.';
+            return;
+        }
+
+        // 1️⃣ Send to yourself
         emailjs.send('service_lzc4uqb', 'template_jgall8c', {
             name: name,
             email: email,
-            message: message
-        })
-        .then(function () {
-            document.getElementById('form-message').textContent = '✅ Thank you! Your message has been sent.';
+            message: message,
+            reply_to: email
+        }).then(function () {
+            statusMessage.textContent = '✅ Thank you! Your message has been sent.';
             document.getElementById('contact-form').reset();
+
+            // 2️⃣ Auto-reply to user
+            emailjs.send('service_lzc4uqb', 'template_93ilvgg', {
+                to_name: name,
+                to_email: email
+            });
         }, function (error) {
-            document.getElementById('form-message').textContent = '❌ Failed to send message. Please try again later.';
+            statusMessage.textContent = '❌ Failed to send message. Please try again later.';
             console.error('EmailJS Error:', error);
         });
     };
 });
+
 
 // Mars effect background animation
 (function () {
