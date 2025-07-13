@@ -1,6 +1,3 @@
-// EmailJS integration for contact form
-// Make sure EmailJS SDK is loaded via CDN in your HTML before this script:
-// <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof emailjs !== 'undefined') {
         emailjs.init('h2uo0veNdKltVlXwP'); // Your EmailJS public key
@@ -170,3 +167,9 @@ document.addEventListener('DOMContentLoaded', function () {
     createCircles();
     animate();
 })();
+
+//project popup
+function showPopup(event) {
+        event.preventDefault(); // Stop the link from opening
+        alert("Code is currently not available.");
+    }
