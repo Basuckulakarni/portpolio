@@ -132,21 +132,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-// WhatsApp send logic
-document.addEventListener('DOMContentLoaded', function () {
-    const whatsappBtn = document.getElementById("whatsapp-send");
-    const messageInput = document.getElementById("whatsapp-message");
-
-    whatsappBtn.addEventListener("click", function () {
-        const message = messageInput.value.trim();
-
-        if (!message) {
-            alert("⚠️ Please type a message.");
-            return;
-        }
-
-        const phone = "917090056446"; // India country code + your number
-        const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, '_blank');
-    });
-});
