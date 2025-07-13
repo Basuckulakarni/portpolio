@@ -135,24 +135,18 @@ document.addEventListener('DOMContentLoaded', function () {
 // WhatsApp send logic
 document.addEventListener('DOMContentLoaded', function () {
     const whatsappBtn = document.getElementById("whatsapp-send");
-    const nameInput = document.getElementById("name");
-    const messageInput = document.getElementById("message");
+    const messageInput = document.getElementById("whatsapp-message");
 
-    if (whatsappBtn) {
-        whatsappBtn.addEventListener("click", function () {
-            const name = nameInput.value.trim();
-            const message = messageInput.value.trim();
+    whatsappBtn.addEventListener("click", function () {
+        const message = messageInput.value.trim();
 
-            if (!name || !message) {
-                alert("⚠️ Please fill in your name and message before sending via WhatsApp.");
-                return;
-            }
+        if (!message) {
+            alert("⚠️ Please type a message.");
+            return;
+        }
 
-            const fullMessage = `Hi, I'm ${name}. ${message}`;
-            const phone = "917090056446"; // 91 is the country code for India
-            const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(fullMessage)}`;
-
-            window.open(whatsappURL, '_blank');
-        });
-    }
+        const phone = "917090056446"; // India country code + your number
+        const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    });
 });
