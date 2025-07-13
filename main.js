@@ -45,74 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Mars effect background animation
-(function () {
-    const canvas = document.getElementById('bg-graphics');
-    const ctx = canvas.getContext('2d');
-    let w, h, marbles;
-    function resize() {
-        w = window.innerWidth;
-        h = window.innerHeight;
-        canvas.width = w;
-        canvas.height = h;
-    }
-    function randomColor() {
-        const colors = ['#f92545', '#eebbc3', '#b8c1ec', '#232946', '#e0e7ff'];
-        return colors[Math.floor(Math.random() * colors.length)];
-    }
-    function createMarbles() {
-        const count = Math.max(12, Math.floor(w / 90));
-        marbles = Array.from({ length: count }, () => ({
-            x: Math.random() * w,
-            y: Math.random() * h,
-            r: 30 + Math.random() * 40,
-            dx: (Math.random() - 0.5) * 0.5,
-            dy: (Math.random() - 0.5) * 0.5,
-            color: randomColor(),
-            shadow: Math.random() > 0.5
-        }));
-    }
-    function drawMarble(m) {
-        // Draw main marble
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(m.x, m.y, m.r, 0, 2 * Math.PI);
-        ctx.fillStyle = m.color;
-        ctx.shadowColor = m.shadow ? '#232946' : m.color;
-        ctx.shadowBlur = m.shadow ? 30 : 10;
-        ctx.globalAlpha = 0.22;
-        ctx.fill();
-        ctx.restore();
-        // Draw highlight
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(m.x - m.r / 3, m.y - m.r / 3, m.r / 4, 0, 2 * Math.PI);
-        ctx.fillStyle = '#fff';
-        ctx.globalAlpha = 0.08;
-        ctx.fill();
-        ctx.restore();
-    }
-    function animate() {
-        ctx.clearRect(0, 0, w, h);
-        for (const m of marbles) {
-            drawMarble(m);
-            m.x += m.dx;
-            m.y += m.dy;
-            if (m.x < -m.r) m.x = w + m.r;
-            if (m.x > w + m.r) m.x = -m.r;
-            if (m.y < -m.r) m.y = h + m.r;
-            if (m.y > h + m.r) m.y = -m.r;
-        }
-        requestAnimationFrame(animate);
-    }
-    window.addEventListener('resize', () => {
-        resize();
-        createMarbles();
-    });
-    resize();
-    createMarbles();
-    animate();
-})();
+// ...existing code...
 
 // Animated background graphics (colorful floating circles)
 (function () {
@@ -170,6 +103,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //project popup
 function showPopup(event) {
-        event.preventDefault(); // Stop the link from opening
-        alert("Code is currently not available.");
-    }
+    event.preventDefault(); // Stop the link from opening
+    alert("Code is currently not available.");
+}
+
+
+// Suggestions logic for contact form
+document.addEventListener('DOMContentLoaded', function () {
+    const textarea = document.getElementById("message");
+    const suggestions = document.getElementById("suggestions");
+    if (!textarea || !suggestions) return;
+
+    textarea.addEventListener("click", (e) => {
+        suggestions.style.display = "block";
+        e.stopPropagation();
+    });
+
+    suggestions.querySelectorAll(".suggestion-item").forEach(item => {
+        item.addEventListener("click", () => {
+            textarea.value = item.textContent;
+            suggestions.style.display = "none";
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!textarea.contains(e.target) && !suggestions.contains(e.target)) {
+            suggestions.style.display = "none";
+        }
+    });
+});
