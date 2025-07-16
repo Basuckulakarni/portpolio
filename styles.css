@@ -232,7 +232,7 @@ form button {
     transition: background 0.2s;
 }
 
-form button:hover {
+form button:hover,form button:focus {
     background: green;
     color: white;
 }
