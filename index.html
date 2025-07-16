@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basavannayya K | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <canvas id="bg-graphics"></canvas>
+
+    <header>
+        <div class="profile-header">
+            <img src="Basu.jpg" alt="Basavannayya K" class="profile-pic" />
+            <h1>Basavannayya K</h1>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="colourful-headline">Welcome to My Portfolio</div>
+
+        <!-- About -->
+        <section id="about" class="card">
+            <h2>About Me&nbsp;<i class="fa-solid fa-face-smile"></i></h2>
+            <p>Hello! I'm Basavannayya C. Kulakarni, a fresher software developer with MCA background and strong
+                hands-on skills in full-stack development using Python, Flask, Django, HTML, CSS, JavaScript, React.js,
+                SQL, PostgreSQL, and MongoDB.</p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="card skills-grid">
+            <h2><i class="fa-solid fa-book-open-reader"></i>&nbsp;Skills</h2>
+            <div class="skills-icons">
+                <div class="skill-item">
+                    <div class="icon-bg green"><i class="fab fa-python"></i></div>
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg indigo"><i class="fab fa-html5"></i></div>
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg purple"><i class="fab fa-css3-alt"></i></div>
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg orange"><i class="fab fa-js-square"></i></div>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg teal"><i class="fa-solid fa-database"></i></div>
+                    <p>SQL</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg black"><i class="fab fa-github"></i></div>
+                    <p>GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg yellow"><i class="fab fa-github-alt"></i></div>
+                    <p>GitCopilot</p>
+                </div>
+                <div class="skill-item">
+                    <div class="icon-bg skyblue"><i class="fab fa-microsoft"></i></div>
+                    <p>Microsoft</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="card">
+            <h2><i class="fas fa-graduation-cap"></i>&nbsp; Education</h2>
+            <div class="education-item">
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <div class="edu-details">
+                    <h3>BCA <span class="year">(2017 - 2020)</span></h3>
+                    <p>KLE's GH BCA College, Haveri</p>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <div class="edu-details">
+                    <h3>MCA <span class="year">(2021 - 2023)</span></h3>
+                    <p>RV College of Engineering, Bangalore</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="card">
+            <h2><i class="fas fa-certificate"></i>&nbsp; Certifications</h2>
+            <ul class="certification-list">
+                <li><i class="fab fa-python cert-icon"></i>Python Full-Stack Development</li>
+                <li><i class="fas fa-database cert-icon"></i>SQL Basics to Advanced (HackerRank)</li>
+            </ul>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="card">
+            <h2><i class="fa-solid fa-diagram-project"></i>&nbsp;Projects</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <h2>🐄 Livestock Tracker</h2>
+                    <p><strong>Tech Stack:</strong> React.js, MongoDB, IoT</p>
+                    <img src="livestock.png" alt="Livestock Tracker Dashboard" class="project-image" />
+                    <p>Tracks animal weight using IoT and MongoDB.</p>
+                    <ul>
+                        <li>Detect weight loss early</li>
+                        <li>Monitor health via live data</li>
+                        <li>Streamlined via IoT sensors</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/Basuckulakarni/Livestock-Management-System" target="_blank"
+                            class="btn">🔗 View Code</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h2>🚗 Smart Parking System</h2>
+                    <p><strong>Tech Stack:</strong> IoT, ThingSpeak, Embedded Systems</p>
+                    <img src="smartparking.png" alt="Smart Parking System Dashboard" class="project-image" />
+                    <p>Real-time parking data with IoT to reduce congestion.</p>
+                    <ul>
+                        <li>Live slot availability</li>
+                        <li>ThingSpeak data dashboard</li>
+                        <li>Mobile & Web compatible</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="btn" onclick="alert('Code is currently not available.'); return false;">🔗
+                            View Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="card">
+            <h2><i class="fa-solid fa-address-card"></i>&nbsp;Contact Details</h2>
+            <ul class="contact-list">
+                <li><span class="icon email-icon"></span><a
+                        href="mailto:basavannayyackulakarni@gmail.com">basavannayyackulakarni@gmail.com</a></li>
+                <li><span class="icon linkedin-icon"><i class="fab fa-linkedin" style="color:#0A66C2;"></i></span><a
+                        href="https://www.linkedin.com/in/basuck/" target="_blank">LinkedIn</a></li>
+                <li><span class="icon whatsapp-icon"><i class="fab fa-whatsapp" style="color:#25D366;"></i></span><a
+                        href="https://wa.me/917090056446" target="_blank">Message me on WhatsApp</a></li>
+                <li><span class="icon github-icon"></span><a href="https://github.com/Basuckulakarni"
+                        target="_blank">GitHub</a></li>
+                <li><span class="icon phone-icon"></span><a href="tel:+917090056446">+91-7090056446</a></li>
+            </ul>
+
+            <form id="contact-form">
+                <label for="name">Name:</label><input type="text" id="name" name="name" required />
+                <label for="email">Email:</label><input type="email" id="email" name="email" required />
+                <label for="message">Message:</label><textarea id="message" name="message" required></textarea>
+                <div id="suggestions" class="suggestions">
+                    <div class="suggestion-item">I’d like to collaborate with you.</div>
+                    <div class="suggestion-item">I have a question about your project.</div>
+                    <div class="suggestion-item">Can we connect on LinkedIn?</div>
+                    <div class="suggestion-item">I'm impressed by your work!</div>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+            <div id="form-message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Basavannayya K</p>
+            <a href="https://drive.google.com/file/d/1Kj7vkkTgUaNiDANFNZOIlp5mQCql2xtn/view?usp=sharing" target="_blank"
+                class="btn">📄 View Resume</a>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</body>
+
+</html>
