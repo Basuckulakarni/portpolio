@@ -1,6 +1,11 @@
 /* =========================
    1. Base Layout & Reset
 ========================= */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
@@ -8,26 +13,6 @@ body {
     background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     color: #232946;
     min-height: 100vh;
-}
-
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-/* Background Canvas */
-#bg-graphics {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-    background: transparent;
 }
 
 /* =========================
@@ -172,6 +157,7 @@ footer {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .edu-icon {
@@ -203,6 +189,7 @@ footer {
    7. Certifications
 ========================= */
 .certification-list {
+    margin-top: 10px;
     list-style: none;
     padding-left: 0;
 }
@@ -225,17 +212,17 @@ footer {
    8. Projects Section
 ========================= */
 .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.5rem;
+    margin-top: 10px;
 }
 
 .project-card {
     background: #e0e7ff;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 1px 6px rgba(35, 41, 70, 0.06);
-    margin-bottom: 40px;
 }
 
 .project-card h2,
@@ -251,12 +238,14 @@ footer {
 }
 
 .project-card .project-image {
+    display: block;
+    margin: 20px auto;
     width: auto;
     max-height: 200px;
     object-fit: cover;
     border-radius: 12px;
-    margin: 15px 0 15px 30px;
 }
+
 
 .project-links .btn {
     display: inline-block;
@@ -267,6 +256,7 @@ footer {
     border-radius: 8px;
     text-decoration: none;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .project-links .btn:hover {
@@ -281,6 +271,7 @@ footer {
     padding: 0;
     margin-bottom: 1.5rem;
     font-size: 1rem;
+    margin-top: 10px;
 }
 
 .contact-list li {
@@ -297,7 +288,7 @@ footer {
 
 .contact-list a:hover {
     background-color: #e0e7ff;
-    color: black;
+    color:blue;
     transform: scale(1.10);
     transition: transform 0.2s;
 }
@@ -354,7 +345,7 @@ form textarea {
 
 form button {    
     padding: 0.5rem;
-    background: rgb(14, 192, 14);
+    background: rgb(54, 93, 234);
     color: black;
     border: none;
     border-radius: 8px;
@@ -364,7 +355,7 @@ form button {
     transition: background 0.2s;
 }
 form button:hover{
-    background: rgb(248, 170, 170);
+    background: rgb(149, 65, 234);
     color: black;
 }
 
@@ -398,7 +389,7 @@ form button:hover{
    10. Footer
 ========================= */
 footer {
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     background: #232946;
     color: palevioletred;
     font-size: 1.5rem;
@@ -419,16 +410,24 @@ footer a {
     font-size: 1rem;
 }
 
-footer .btn {
-    display: inline-block;
-    background-color: #ef6f82;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
 footer .btn:hover {
     background-color: black;
     transform: scale(1.10);
+}
+
+.resume-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: #2d6cdf;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 32px;
+  font-size: 1.1em;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
