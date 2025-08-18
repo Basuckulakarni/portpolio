@@ -1,15 +1,14 @@
 /* =========================
    1. Base Layout & Reset
 ========================= */
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;    
+    padding: 0;
 }
+
 body {
     font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
     color: #232946;
     min-height: 100vh;
@@ -29,9 +28,9 @@ footer {
 .profile-header {
     background: #232946;
     color: #fff;
-    padding: 1.2rem 0 0.7rem 0;
+    padding: 1.2rem 0 0.7rem;
     border-radius: 0 0 24px 24px;
-    box-shadow: 0 2px 12px rgba(35, 41, 70, 0.10);
+    box-shadow: 0 2px 12px rgba(35, 41, 70, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,18 +54,21 @@ footer {
     font-weight: bold;
     background: linear-gradient(90deg, #f92545, #eebbc3, #b8c1ec, #232946, #e0e7ff);
     background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: rainbow-text 3s linear infinite;
     text-align: center;
-    margin: 2rem 0 1.2rem 0;
+    margin: 2rem 0 1.2rem;
 }
 
 @keyframes rainbow-text {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
 }
 
 /* =========================
@@ -89,8 +91,6 @@ footer {
    5. Skills Section
 ========================= */
 .skills-grid {
-    background-color: #ffffff;
-    color: #030303;
     border-radius: 12px;
     padding: 40px 20px;
 }
@@ -134,21 +134,40 @@ footer {
 }
 
 /* Color Helpers */
-.red { background-color: #e44d26; }
-.blue { background-color: #264de4; }
-.yellow { background-color: #f0db4f; color: #000; }
-.green { background-color: #68a063; }
-.skyblue { background-color: #61dafb; color: #000; }
+.green {
+    background-color: #68a063;
+}
 
-.purple      { background-color: #8e44ad; }      /* Royal Purple */
-.orange      { background-color: #f39c12; color: #000; } /* Orange */
-.teal        { background-color: #1abc9c; }      /* Teal Green */
-.gray        { background-color: #7f8c8d; }      /* Neutral Gray */
-.pink        { background-color: #e91e63; }      /* Pink */
-.indigo      { background-color: #3f51b5; }      /* Indigo */
-.brown       { background-color: #a0522d; }      /* Saddle Brown */
-.black       { background-color: #111111; }      /* True Black */
-.white       { background-color: #ffffff; color: #000; } /* True White */
+.indigo {
+    background-color: #3f51b5;
+}
+
+.purple {
+    background-color: #8e44ad;
+}
+
+.orange {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.teal {
+    background-color: #1abc9c;
+}
+
+.black {
+    background-color: #111111;
+}
+
+.yellow {
+    background-color: #f0db4f;
+    color: #000;
+}
+
+.skyblue {
+    background-color: #61dafb;
+    color: #000;
+}
 
 /* =========================
    6. Education Section
@@ -156,8 +175,7 @@ footer {
 .education-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    margin: 10px 0 20px;
 }
 
 .edu-icon {
@@ -175,7 +193,7 @@ footer {
 
 .edu-details .year {
     font-size: 14px;
-    color: #000000;
+    color: #000;
     margin-left: 8px;
 }
 
@@ -199,7 +217,7 @@ footer {
     align-items: center;
     margin-bottom: 12px;
     font-size: 15px;
-    color: #000000;
+    color: #000;
 }
 
 .cert-icon {
@@ -240,12 +258,10 @@ footer {
 .project-card .project-image {
     display: block;
     margin: 20px auto;
-    width: auto;
     max-height: 200px;
     object-fit: cover;
     border-radius: 12px;
 }
-
 
 .project-links .btn {
     display: inline-block;
@@ -266,62 +282,26 @@ footer {
 /* =========================
    9. Contact Section
 ========================= */
-.contact-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    margin-top: 10px;
+.contact-links {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    /* adds spacing instead of margin-right */
 }
 
-.contact-list li {
-    margin-bottom: 0.5rem;
+.contact-links a {
     display: flex;
     align-items: center;
+    color: #222;
+    text-decoration: none;
+    background: #eaf1fb;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.contact-list a {
-    color: #232946;
-    text-decoration: underline;
-    margin-left: 0.2em;
-}
-
-.contact-list a:hover {
-    background-color: #e0e7ff;
-    color:blue;
-    transform: scale(1.10);
-    transition: transform 0.2s;
-}
-
-/* Contact Icons */
-.icon {
-    display: inline-block;
-    width: 1.2em;
-    text-align: center;
-    margin-right: 0.5em;
-    color: #f92545;
-    font-size: 1.1em;
-    vertical-align: middle;
-}
-
-.email-icon:before {
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    content: "\f0e0";
-}
-
-.github-icon:before {
-    font-family: 'Font Awesome 6 Brands';
-    content: "\f09b";
-}
-
-.phone-icon:before {
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    content: "\f095";
-}
-
-/* Contact Form */
 form {
     display: flex;
     flex-direction: column;
@@ -343,7 +323,7 @@ form textarea {
     min-height: 90px;
 }
 
-form button {    
+form button {
     padding: 0.5rem;
     background: rgb(54, 93, 234);
     color: black;
@@ -351,10 +331,11 @@ form button {
     border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;    
+    cursor: pointer;
     transition: background 0.2s;
 }
-form button:hover{
+
+form button:hover {
     background: rgb(149, 65, 234);
     color: black;
 }
@@ -365,7 +346,6 @@ form button:hover{
     font-weight: 500;
 }
 
-/* Suggestions (Below Contact Form) */
 .suggestions {
     display: none;
     border: 1px solid #ccc;
@@ -400,8 +380,6 @@ footer {
 
 footer .container {
     display: block;
-    justify-content: space-between;
-    align-items: center;
 }
 
 footer a {
@@ -410,24 +388,22 @@ footer a {
     font-size: 1rem;
 }
 
-footer .btn:hover {
-    background-color: black;
-    transform: scale(1.10);
-}
-
+/* =========================
+   11. Floating Resume Button
+========================= */
 .resume-btn {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  background: #2d6cdf;
-  color: #fff;
-  padding: 14px 22px;
-  border-radius: 32px;
-  font-size: 1.1em;
-  text-decoration: none;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: #2d6cdf;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 32px;
+    font-size: 1.1em;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
