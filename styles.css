@@ -1,6 +1,4 @@
-/* =========================
-   1. Base Layout & Reset
-========================= */
+/* 1. Base Layout & Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,9 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/* =========================
-   2. Header
-========================= */
+/* 2. Header */
 header,
 .container,
 main,
@@ -46,9 +42,7 @@ footer {
     border: 2px solid #eebbc3;
 }
 
-/* =========================
-   3. Headline Animation
-========================= */
+/*3. Headline Animation */
 .colourful-headline {
     font-size: 2rem;
     font-weight: bold;
@@ -71,9 +65,7 @@ footer {
     }
 }
 
-/* =========================
-   4. Cards (Common Section Style)
-========================= */
+/* 4. Cards (Common Section Style) */
 .card {
     background: #fff;
     border-radius: 18px;
@@ -87,9 +79,7 @@ footer {
     box-shadow: 0 4px 24px rgba(35, 41, 70, 0.13);
 }
 
-/* =========================
-   5. Skills Section
-========================= */
+/* 5. Skills Section */
 .skills-grid {
     border-radius: 12px;
     padding: 40px 20px;
@@ -169,9 +159,7 @@ footer {
     color: #000;
 }
 
-/* =========================
-   6. Education Section
-========================= */
+/* 6. Education Section */
 .education-item {
     display: flex;
     align-items: center;
@@ -203,9 +191,7 @@ footer {
     font-size: 14px;
 }
 
-/* =========================
-   7. Certifications
-========================= */
+/* 7. Certifications */
 .certification-list {
     margin-top: 10px;
     list-style: none;
@@ -226,21 +212,32 @@ footer {
     margin-right: 10px;
 }
 
-/* =========================
-   8. Projects Section
-========================= */
+/* 8. Projects Section */
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 0.5rem;
-    margin-top: 10px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .project-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .project-card {
-    background: #e0e7ff;
+    background: #fff;
     border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 1px 6px rgba(35, 41, 70, 0.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    width: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-card h2,
@@ -255,13 +252,15 @@ footer {
     font-size: 0.98rem;
 }
 
-.project-card .project-image {
-    display: block;
-    margin: 20px auto;
-    max-height: 200px;
+.project-image {
+    width: 80%;
+    height: auto;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    display: block;
 }
+
 
 .project-links .btn {
     display: inline-block;
@@ -279,15 +278,14 @@ footer {
     background-color: #0056b3;
 }
 
-/* =========================
-   9. Contact Section
-========================= */
+
+
+/* 9. Contact Section */
 .contact-links {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    /* adds spacing instead of margin-right */
 }
 
 .contact-links a {
@@ -365,9 +363,7 @@ form button:hover {
     background-color: #e0e0e0;
 }
 
-/* =========================
-   10. Footer
-========================= */
+/* 10. Footer */
 footer {
     padding: 1rem 0;
     background: #232946;
@@ -388,9 +384,7 @@ footer a {
     font-size: 1rem;
 }
 
-/* =========================
-   11. Floating Resume Button
-========================= */
+/* 11. Floating Resume Button */
 .resume-btn {
     position: fixed;
     right: 24px;
