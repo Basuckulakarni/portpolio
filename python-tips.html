@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Explained | Basavannayya K</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="profile-header">
+        <h1>🐍 Python Blog: Mastering Python with Tips & Tricks</h1>
+    </header>
+
+    <main class="container">
+        <article class="blog-article" style="display:block;">
+            <section>
+                <h2>Introduction</h2>
+                <p>
+                    Python is one of the most popular programming languages in the world. Known for its
+                    <strong>simplicity, readability, and versatility</strong>, it is used in web development,
+                    data science, artificial intelligence, automation, and more.
+                </p>
+            </section>
+
+            <section>
+                <h2>Why Learn Python?</h2>
+                <ul>
+                    <li>✅ Easy to Read and Write</li>
+                    <li>✅ Cross-platform Support</li>
+                    <li>✅ Huge Community & Libraries</li>
+                    <li>✅ Perfect for Web Development, Data Science, Machine Learning, and Automation</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Core Python Concepts to Master</h2>
+                <ul>
+                    <li>Variables & Data Types</li>
+                    <li>Control Flow</li>
+                    <li>Functions</li>
+                    <li>OOP (Object-Oriented Programming)</li>
+                    <li>Modules & Packages</li>
+                    <li>Exception Handling</li>
+                    <li>File Handling</li>
+                    <li>Libraries (NumPy, Pandas, Flask, Django, TensorFlow)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>💡 Python Tips & Tricks</h2>
+
+                <div class="tip">
+                    <h3>1. Swap Variables Without a Temp Variable</h3>
+                    <pre><code>a, b = 10, 20
+a, b = b, a
+print(a, b)  # Output: 20 10</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>2. List Comprehensions</h3>
+                    <pre><code>squares = [x**2 for x in range(10)]
+print(squares)</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>3. Use enumerate() Instead of Range</h3>
+                    <pre><code>fruits = ["apple", "banana", "mango"]
+for index, fruit in enumerate(fruits, start=1):
+    print(index, fruit)</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>4. Merge Two Dictionaries Quickly</h3>
+                    <pre><code>dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 3, "d": 4}
+merged = {**dict1, **dict2}
+print(merged)</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>5. Check Memory Usage of an Object</h3>
+                    <pre><code>import sys
+num = 100
+print(sys.getsizeof(num))</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>6. Use zip() for Parallel Iteration</h3>
+                    <pre><code>names = ["Alice", "Bob", "Charlie"]
+scores = [85, 90, 95]
+for name, score in zip(names, scores):
+    print(f"{name} scored {score}")</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>7. One-Liner Lambda Functions</h3>
+                    <pre><code>add = lambda x, y: x + y
+print(add(5, 10))  # Output: 15</code></pre>
+                </div>
+
+                <div class="tip">
+                    <h3>8. Debug Easily with f-strings</h3>
+                    <pre><code>x = 42
+print(f"Debug: The value of x is {x}")</code></pre>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>🚀 Final Thoughts</h2>
+                <p>
+                    Python is not just a programming language – it’s a powerful tool that allows you to build
+                    anything from <strong>web applications to machine learning models</strong>.
+                    By practicing regularly and learning small tips & tricks, you can write
+                    <strong>cleaner, faster, and more efficient code</strong>.
+                </p>
+            </section>
+        </article>
+
+        <a href="index.html#blog" class="btn" style="margin-top:20px;">← Back to Blog List</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Basavannayya K</p>
+    </footer>
+</body>
+
+</html>
