@@ -1,54 +1,168 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* ===== PROJECT DATABASE ===== */
+
+const projects = {
+
+  livestock: {
+    title: "🐄 Livestock Tracker",
+    tech: "React.js, MongoDB, IoT",
+    image: "/images/livestock.png",
+    description: "Tracks animal weight using IoT and MongoDB.",
+    features: [
+      "Detect weight loss early",
+      "Monitor health via live data",
+      "Streamlined via IoT sensors"
+    ],
+    github: "https://github.com/Basuckulakarni/Livestock-Management-System"
+  },
+
+  parking: {
+    title: "🚗 Smart Parking System",
+    tech: "IoT, ThingSpeak, Embedded Systems",
+    image: "images/smartparking.png",
+    description: "Real-time parking data with IoT.",
+    features: [
+      "Live slot availability",
+      "ThingSpeak dashboard",
+      "Mobile & Web compatible"
+    ],
+    github: "#"
+  },
+
+  rental: {
+    title: "🏍️ Rental Vehicle Booking System",
+    tech: "Flask, SQL, Bootstrap",
+    image: "images/rentalvehicle.PNG",
+    description: "Book vehicles online with real-time availability.",
+    features: [
+      "Vehicle card display",
+      "Secure booking form",
+      "Admin panel"
+    ],
+    github: "https://github.com/Basuckulakarni/Rental_Vehicle"
+  },
+
+  gym: {
+    title: "💪 Gym Management App",
+    tech: "Python, Flask, Pandas",
+    image: "images/gym1.PNG",
+    description: "Manage gym members and payments.",
+    features: [
+      "Member registration",
+      "Attendance tracking",
+      "Excel reports"
+    ],
+    github: "https://github.com/Basuckulakarni/Gym_app"
+  }
+};
+
+
+/* ===== PAGE EVENTS ===== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== EMAIL JS ===== */
+
   if (typeof emailjs !== "undefined") {
     emailjs.init("h2uo0veNdKltVlXwP");
   }
 
   const form = document.getElementById("contact-form");
-  const statusMessage = document.getElementById("form-message");
+  const msg = document.getElementById("form-message");
 
-  form.onsubmit = function (e) {
-    e.preventDefault();
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+  if (form) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
 
-    if (!name || !email || !message) {
-      statusMessage.textContent = "⚠️ Please fill out all fields.";
-      return;
-    }
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
 
-    if (typeof emailjs === "undefined") {
-      statusMessage.textContent = "❌ EmailJS not loaded. Check connection.";
-      return;
-    }
-
-    emailjs.send("service_lzc4uqb", "template_jgall8c", { name, email, message, reply_to: email }).then(() => {
-      statusMessage.textContent = "✅ Thank you! Your message has been sent.";
-      form.reset();
-      emailjs.send("service_lzc4uqb", "template_93ilvgg", { to_name: name, to_email: email });
-    }).catch(error => {
-      statusMessage.textContent = "❌ Failed to send message.";
-      console.error("EmailJS Error:", error);
+      emailjs.send("service_lzc4uqb", "template_jgall8c", data)
+        .then(() => {
+          msg.textContent = "✅ Message Sent Successfully";
+          form.reset();
+        })
+        .catch(() => {
+          msg.textContent = "❌ Failed to send";
+        });
     });
-  };
+  }
+
+
+  /* ========= MESSAGE SUGGESTIONS ========= */
 
   const textarea = document.getElementById("message");
   const suggestions = document.getElementById("suggestions");
 
-  textarea.addEventListener("click", () => {
-    suggestions.style.display = "block";
-  });
+  if (textarea && suggestions) {
 
-  document.querySelectorAll(".suggestion-item").forEach(item => {
-    item.addEventListener("click", () => {
-      textarea.value = item.textContent;
-      suggestions.style.display = "none";
+    // show when textarea clicked
+    textarea.addEventListener("focus", () => {
+      suggestions.style.display = "block";
     });
-  });
 
-  document.addEventListener("click", (e) => {
-    if (!textarea.contains(e.target) && !suggestions.contains(e.target)) {
-      suggestions.style.display = "none";
-    }
-  });
+    // click suggestion → fill message
+    document.querySelectorAll(".suggestion-item").forEach(item => {
+      item.addEventListener("click", () => {
+        textarea.value = item.textContent;
+        suggestions.style.display = "none";
+      });
+    });
+
+    // hide when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!textarea.contains(e.target) &&
+        !suggestions.contains(e.target)) {
+        suggestions.style.display = "none";
+      }
+    });
+  }
+
+});
+
+
+/* ===== PROJECT MODAL ===== */
+
+function openProject(id) {
+
+  const project = projects[id];
+  const modal = document.getElementById("projectModal");
+  const container = document.getElementById("projectDetails");
+
+  if (!project) return;
+
+  container.innerHTML = `
+        <h1>${project.title}</h1>
+
+        <p><strong>Tech Stack:</strong> ${project.tech}</p>
+
+        <img src="${project.image}" class="project-image">
+
+        <p>${project.description}</p>
+
+        <ul>
+            ${project.features.map(f => `<li>${f}</li>`).join("")}
+        </ul>
+
+        <a href="${project.github}" target="_blank" class="resume-btn">
+            🔗 View Code
+        </a>
+    `;
+
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeProject() {
+  document.getElementById("projectModal").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+window.addEventListener("click", (e) => {
+  const modal = document.getElementById("projectModal");
+  if (e.target === modal) {
+    closeProject();
+  }
 });
