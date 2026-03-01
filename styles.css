@@ -27,9 +27,9 @@ body {
 /* ===== Header ===== */
 
 .profile-header {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-    padding: 28px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,12 +204,13 @@ body {
 
 .experience-item {
     display: flex;
+    align-items: flex-start;
     gap: 18px;
     padding: 18px;
     background: #f8fafc;
     border-radius: 14px;
     border: 1px solid #e2e8f0;
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 
 .experience-item:hover {
@@ -218,6 +219,7 @@ body {
 }
 
 .exp-icon {
+    margin-top: 4px;
     min-width: 50px;
     height: 50px;
     background: #2563eb;
@@ -242,17 +244,6 @@ body {
     margin-top: 8px;
     color: #475569;
 }
-
-@media(max-width:768px) {
-    .experience-item {
-        flex-direction: column;
-    }
-
-    .exp-icon {
-        margin-bottom: 10px;
-    }
-}
-
 
 /* ===== Education ===== */
 
@@ -457,10 +448,11 @@ form button:hover {
 /* ===== Footer ===== */
 
 footer {
+    width: 100%;
     background: #0f172a;
-    color: white;
+    color: #ffffff;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
     border-radius: 24px 24px 0 0;
     display: flex;
     justify-content: space-between;
@@ -468,6 +460,15 @@ footer {
     flex-wrap: wrap;
 }
 
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    text-decoration: underline;
+    transform: translateY(-2px);
+    color: #38bdf8;
+}
 
 /* ===== Responsive ===== */
 
@@ -483,5 +484,15 @@ footer {
 
     .card {
         padding: 22px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    footer .resume-btn {
+        margin: 0 auto;
     }
 }
